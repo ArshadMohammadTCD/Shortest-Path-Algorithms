@@ -214,8 +214,8 @@ public class CompetitionDijkstra {
     	
     	
     	//System.out.println(CP.numOfEdges); 
-    	System.out.println(CP.timeRequiredforCompetition());
-    	System.out.println(WP.timeRequiredforCompetition());
+    	System.out.println(CP.timeRequiredforCompetition() + " max time needed fro Competition (Dijkstra)");
+    	System.out.println(WP.timeRequiredforCompetition()+ " max time needed for Competition (FloydWarshall)");
     	
     	
     }
