@@ -110,9 +110,9 @@ public class CompetitionFloydWarshall {
     	}
     	
     	
-//    	int timeTaken = (int) ((maxDistance*1000)/speed);
+    	int timeTaken = (int) ((maxDistance*1000)/speed);
         
-    	return (int)maxDistance;
+    	return (int)timeTaken;
     	//TO DO
       
     }

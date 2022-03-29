@@ -39,8 +39,8 @@ public class CompetitionDijkstra {
 	
 	
 	HashMap<Integer, List<Edge>> Vertices = new HashMap<Integer, List<Edge>>();
-	private double[] dist;
-	private boolean[] finished;
+	
+	
 	int numOfVertices = 0;
 	int sA, sB, sC = 50;
 	
@@ -54,8 +54,8 @@ public class CompetitionDijkstra {
     	this.sC = sC;
     	
     	this.parseData(filename);
-    	this.dijkstra(0);
-    	System.out.println(Arrays.toString(dist));
+//    	dijkstra(2);
+    	
     	
     	
     	//TODO
@@ -77,7 +77,15 @@ public class CompetitionDijkstra {
     
     
     
-    private void dijkstra(int src){ 
+    private double dijkstra(int src){ 
+    	boolean[] finished;
+    	finished = new boolean[numOfVertices];
+	    
+	    for (int i = 0; i < numOfVertices; i++) {
+	    	finished[i] = false;
+ 	    }
+    	double[] dist;
+    	dist = new double[numOfVertices];
     	for (int i = 0; i < this.numOfVertices; i++) {
     		dist[i] = Integer.MAX_VALUE;
     	}
@@ -103,7 +111,19 @@ public class CompetitionDijkstra {
         			}
         		}
     		}	
-    	}	
+    	}
+    	double maxNum = 0;
+    	for (int j = 0; j < numOfVertices; j++) {	
+//    		this.dijkstra(j);
+    		for(int i = 0; i < numOfVertices; i++) {
+        		if (dist[i] > maxNum && dist[i] != Integer.MAX_VALUE) {
+        			maxNum = dist[i];
+        		}
+        	}
+    		
+    	}
+    	System.out.println(Arrays.toString(dist));
+    	return maxNum;
     }
     
     
@@ -120,12 +140,8 @@ public class CompetitionDijkstra {
 	    }
 	    numOfVertices = input.nextInt();
 	    this.numOfVertices = numOfVertices;
-	    dist = new double[numOfVertices];
-	    finished = new boolean[numOfVertices];
 	    
-	    for (int i = 0; i < numOfVertices; i++) {
-	    	finished[i] = false;
- 	    }
+	    
 	    
 	    
 	    int numOfEdges = input.nextInt();
@@ -164,11 +180,11 @@ public class CompetitionDijkstra {
     	
     	
     	
-    	
-    	for(int i = 0; i < numOfVertices; i++) {
-    		if (dist[i] > maxNum) {
-    			maxNum = dist[i];
-    		}
+    	for (int j = 0; j < numOfVertices; j++) {	
+    		double dijkstra = dijkstra(j);
+        		if ( dijkstra > maxNum) {
+        			maxNum = dijkstra;
+        	}	
     	}
     	
     	int speed = 0;
@@ -193,13 +209,12 @@ public class CompetitionDijkstra {
         
     }
     public static void main(String[] args) {
-//    	CompetitionDijkstra CP	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200 );
-//    	
+    	CompetitionDijkstra CP	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200 );
     	CompetitionFloydWarshall WP = new CompetitionFloydWarshall("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200);
     	
     	
     	//System.out.println(CP.numOfEdges); 
-//    	System.out.println(CP.timeRequiredforCompetition());
+    	System.out.println(CP.timeRequiredforCompetition());
     	System.out.println(WP.timeRequiredforCompetition());
     	
     	
