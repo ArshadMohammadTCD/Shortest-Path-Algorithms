@@ -161,6 +161,10 @@ public class CompetitionDijkstra {
     	
     	double maxNum = 0;
     	
+    	
+    	
+    	
+    	
     	for(int i = 0; i < numOfVertices; i++) {
     		if (dist[i] > maxNum) {
     			maxNum = dist[i];

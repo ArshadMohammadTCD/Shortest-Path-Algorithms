@@ -30,10 +30,9 @@ public class CompetitionFloydWarshall {
     	for(int k = 0; k < numOfVertices; k++) {
     		for(int i = 0; i < numOfVertices; i++) {
     			for(int j = 0; j < numOfVertices; j++) {
-    				
-    		
-    				
-    				
+    				if(edges[i][k] +edges[k][j] < edges[i][j] ) {
+    					edges[i][j] = edges[i][k] + edges[k][j];
+    				}
     			}
     		}
     	}
@@ -74,7 +73,7 @@ public class CompetitionFloydWarshall {
 //	    	input.close();
 	    	
 	    } 
-
+	    
 	    
 	    
 	    
@@ -86,19 +85,16 @@ public class CompetitionFloydWarshall {
     	
 //    	FloydWarshall competition = new FloydWarshall(graph);
     	double maxDistance = 0;
-    	
-    	
+ 	
     	int speed = 0;
-    	
+
     	for (int i = 0; i < numOfVertices; i++) {
     		for(int j= 0; j < numOfVertices; j++) {    			
-    			
-    			
-    			
-    			
-    			
-    			}					
-    		}
+    			if (edges[i][j] > maxDistance) {
+        			maxDistance = edges[i][j];
+        		}		
+    		}			
+    	}
     	
     	
     	
