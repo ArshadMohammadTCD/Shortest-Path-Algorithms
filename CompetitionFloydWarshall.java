@@ -90,7 +90,7 @@ public class CompetitionFloydWarshall {
 
     	for (int i = 0; i < numOfVertices; i++) {
     		for(int j= 0; j < numOfVertices; j++) {    			
-    			if (edges[i][j] > maxDistance) {
+    			if (edges[i][j] > maxDistance && edges[i][j] != Integer.MAX_VALUE) {
         			maxDistance = edges[i][j];
         		}		
     		}			

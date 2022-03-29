@@ -21,10 +21,21 @@ public class CompetitionTests {
     	CompetitionFloydWarshall WP = new CompetitionFloydWarshall("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200);
         //TODO
     }
-    
-    
-    
-    
+    @Test
+    public void testDijkstraInputA() {
+    	CompetitionDijkstra CD	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-A.txt", 100, 100, 200 );
+//    	assertEquals( "Checking insertBefore to a list containing 3 elements at position 0", 5000, CD.timeRequiredforCompetition());
+    }
+    @Test
+    public void testDijkstraInputB() {
+    	CompetitionDijkstra CD	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200 );
+    	assertEquals( "Checking insertBefore to a list containing 3 elements at position 0", 5000, CD.timeRequiredforCompetition());
+    }
+    @Test
+    public void testFloydWarshallInputB() {
+    	CompetitionFloydWarshall CFW= new CompetitionFloydWarshall("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200 );
+    	assertEquals( "Checking insertBefore to a list containing 3 elements at position 0", 5000, CFW.timeRequiredforCompetition());
+    }
     
     
     //TODO - more tests

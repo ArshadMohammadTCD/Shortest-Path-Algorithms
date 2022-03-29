@@ -122,7 +122,7 @@ public class CompetitionDijkstra {
         	}
     		
     	}
-    	System.out.println(Arrays.toString(dist));
+//    	System.out.println(Arrays.toString(dist));
     	return maxNum;
     }
     
@@ -209,8 +209,8 @@ public class CompetitionDijkstra {
         
     }
     public static void main(String[] args) {
-    	CompetitionDijkstra CP	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200 );
-    	CompetitionFloydWarshall WP = new CompetitionFloydWarshall("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-B.txt", 100, 100, 200);
+    	CompetitionDijkstra CP	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-A.txt", 100, 100, 200 );
+    	CompetitionFloydWarshall WP = new CompetitionFloydWarshall("C:\\Users\\arsha\\eclipse-workspace\\Exam\\input-A.txt", 100, 100, 200);
     	
     	
     	//System.out.println(CP.numOfEdges); 
