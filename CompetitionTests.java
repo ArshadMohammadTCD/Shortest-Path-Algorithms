@@ -72,6 +72,26 @@ public class CompetitionTests {
     
     
     }
+    @Test
+    public void testDijkstraInputSpeeds() {
+    	CompetitionDijkstra CFW1 = new CompetitionDijkstra("C:\\\\Users\\\\arsha\\\\eclipse-workspace\\\\Exam\\\\input-C.txt", 100, 100 , 200);
+    	CompetitionDijkstra CFW2 = new CompetitionDijkstra("C:\\\\Users\\\\arsha\\\\eclipse-workspace\\\\Exam\\\\input-C.txt", 100, 200 , 100);
+    	CompetitionDijkstra CFW3 = new CompetitionDijkstra("C:\\\\Users\\\\arsha\\\\eclipse-workspace\\\\Exam\\\\input-C.txt", 200, 100 , 200);
+    	CompetitionDijkstra CFW4 = new CompetitionDijkstra("C:\\\\Users\\\\arsha\\\\eclipse-workspace\\\\Exam\\\\input-C.txt", 100, 100 , 20);
+    	CompetitionDijkstra CFW5 = new CompetitionDijkstra("C:\\\\Users\\\\arsha\\\\eclipse-workspace\\\\Exam\\\\input-C.txt", 100, 20 , 100);
+    	CompetitionDijkstra CFW6 = new CompetitionDijkstra("C:\\\\Users\\\\arsha\\\\eclipse-workspace\\\\Exam\\\\input-C.txt", 20, 100 , 100);
+    	assertEquals( "Checking speed fail conditions", -1, CFW1.timeRequiredforCompetition());
+    	assertEquals( "Checking speed fail conditions", -1, CFW2.timeRequiredforCompetition());
+    	assertEquals( "Checking speed fail conditions", -1, CFW3.timeRequiredforCompetition());
+    	assertEquals( "Checking speed fail conditions", -1, CFW4.timeRequiredforCompetition());
+    	assertEquals( "Checking speed fail conditions", -1, CFW5.timeRequiredforCompetition());
+    	assertEquals( "Checking speed fail conditions", -1, CFW6.timeRequiredforCompetition());
+    	
+    
+    
+    }
+    
+    
     //TODO - more tests
     
 }
