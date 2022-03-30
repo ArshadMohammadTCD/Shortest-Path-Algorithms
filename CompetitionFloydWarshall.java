@@ -96,7 +96,17 @@ public class CompetitionFloydWarshall {
     		}			
     	}
     	
+       	if (sA < 50 || sA > 100 ) {
+    		return -1;
+    	}
     	
+    	if (sB < 50 || sB > 100) {
+    		return -1;
+    		
+    	}
+    	if (sC < 50 || sC > 100) {
+    		return -1;
+    	}
     	
     	if (sA < sB) {
     		speed = sA;
