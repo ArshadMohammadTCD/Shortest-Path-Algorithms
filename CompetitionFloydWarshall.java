@@ -48,9 +48,14 @@ public class CompetitionFloydWarshall {
     int numOfVertices = 0 ;
 	int numOfEdges = 0;
     private void parseData(String filename) {
-    	
+    	if (filename == null) {
+    		return;
+    	}
     	
 		File a = new File(filename);
+		if (a.length() !=0 ) {
+			
+		
 	    Scanner input = null;
 	    try {
 	        input = new Scanner(a);
@@ -76,7 +81,7 @@ public class CompetitionFloydWarshall {
 //	    	input.close();
 	    	
 	    } 
-	    
+		}
 	    
 	    
 	    
@@ -90,7 +95,21 @@ public class CompetitionFloydWarshall {
     	double maxDistance = 0;
  	
     	int speed = 0;
-
+    	
+    
+    	if (sA < 50 || sA > 100 ) {
+    		return -1;
+    	}
+    	
+    	if (sB < 50 || sB > 100) {
+    		return -1;
+    		
+    	}
+    	if (sC < 50 || sC > 100) {
+    		return -1;
+    	}
+    	
+    	
     	for (int i = 0; i < numOfVertices; i++) {
     		for(int j= 0; j < numOfVertices; j++) {    			
     			if (edges[i][j] > maxDistance && edges[i][j] != Integer.MAX_VALUE) {
@@ -103,17 +122,7 @@ public class CompetitionFloydWarshall {
     		}			
     	}
     	
-       	if (sA < 50 || sA > 100 ) {
-    		return -1;
-    	}
-    	
-    	if (sB < 50 || sB > 100) {
-    		return -1;
-    		
-    	}
-    	if (sC < 50 || sC > 100) {
-    		return -1;
-    	}
+    
     	
     	if (sA < sB) {
     		speed = sA;
@@ -129,7 +138,7 @@ public class CompetitionFloydWarshall {
     	
     	int timeTaken = (int) Math.ceil((maxDistance*1000)/speed);
     	if (timeTaken == 0) {
-    		return 0;
+    		return -1;
     	}
 //    	return (int)timeTaken;
     	return timeTaken;
