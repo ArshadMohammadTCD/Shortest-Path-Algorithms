@@ -95,7 +95,11 @@ public class CompetitionFloydWarshall {
     		for(int j= 0; j < numOfVertices; j++) {    			
     			if (edges[i][j] > maxDistance && edges[i][j] != Integer.MAX_VALUE) {
         			maxDistance = edges[i][j];
-        		}		
+        		
+        		}
+    			if (edges[i][j] == Integer.MAX_VALUE) {
+    				return -1;
+    			}
     		}			
     	}
     	
@@ -123,8 +127,10 @@ public class CompetitionFloydWarshall {
     	}
     	
     	
-    	int timeTaken = (int) ((maxDistance*1000)/speed);
-        
+    	int timeTaken = (int) Math.ceil((maxDistance*1000)/speed);
+    	if (timeTaken == 0) {
+    		return 0;
+    	}
 //    	return (int)timeTaken;
     	return timeTaken;
     	//TO DO

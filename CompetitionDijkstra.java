@@ -116,9 +116,12 @@ public class CompetitionDijkstra {
     	for (int j = 0; j < numOfVertices; j++) {	
 //    		this.dijkstra(j);
     		for(int i = 0; i < numOfVertices; i++) {
-        		if (dist[i] > maxNum && dist[i] != Integer.MAX_VALUE) {
+        		if (dist[i] > maxNum ) {
         			maxNum = dist[i];
         		}
+        		
+        		
+        		
         	}
     		
     	}
@@ -184,6 +187,9 @@ public class CompetitionDijkstra {
     		double dijkstra = dijkstra(j);
         		if ( dijkstra > maxNum) {
         			maxNum = dijkstra;
+        		if (dijkstra == Integer.MAX_VALUE) {
+        			return -1;
+        		}
         	}	
     	}
     	
@@ -214,22 +220,25 @@ public class CompetitionDijkstra {
     	
     	
     	
-    	int timeTaken = (int) ((maxNum*1000)/speed);
-    	
+    	int timeTaken = (int)Math.ceil((maxNum*1000)/speed);
+    	if (timeTaken == 0) {
+    		return 0;
+    	}
+    
     	return timeTaken;
     	
         //TO DO
         
     }
     public static void main(String[] args) {
-    	CompetitionDijkstra CP	= new CompetitionDijkstra("C:\\Users\\arsha\\eclipse-workspace\\Exam\\tinyEWD.txt", 100, 100, 200 );
-    	CompetitionFloydWarshall WP = new CompetitionFloydWarshall("C:\\Users\\arsha\\eclipse-workspace\\Exam\\tinyEWD.txt", 100, 100, 200);
+    	CompetitionDijkstra CP	= new CompetitionDijkstra("input-J.txt", 60,75,61 );
+    	CompetitionFloydWarshall WP = new CompetitionFloydWarshall("input-J.txt", 60,75,61);
     	
     	
     	//System.out.println(CP.numOfEdges); 
-    	System.out.println(CP.timeRequiredforCompetition() + " distance");
-    	System.out.println(WP.timeRequiredforCompetition()+ " distance");
-    	
-    	
+    	System.out.println(CP.timeRequiredforCompetition() + " time taken");
+    	System.out.println(WP.timeRequiredforCompetition()+ " time taken");
+//    	
+//    	
     }
 }
