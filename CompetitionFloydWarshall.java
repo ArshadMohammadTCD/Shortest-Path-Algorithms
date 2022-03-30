@@ -30,8 +30,8 @@ public class CompetitionFloydWarshall {
     	for(int k = 0; k < numOfVertices; k++) {
     		for(int i = 0; i < numOfVertices; i++) {
     			for(int j = 0; j < numOfVertices; j++) {
-    				if(edges[i][k] +edges[k][j] < edges[i][j] ) {
-    					edges[i][j] = edges[i][k] + edges[k][j];
+    				if(edges[k][i] +edges[j][k] < edges[j][i] && j != i) {
+    					edges[j][i] = edges[k][i] + edges[j][k];
     				}
     			}
     		}
@@ -112,7 +112,8 @@ public class CompetitionFloydWarshall {
     	
     	int timeTaken = (int) ((maxDistance*1000)/speed);
         
-    	return (int)timeTaken;
+//    	return (int)timeTaken;
+    	return timeTaken;
     	//TO DO
       
     }
