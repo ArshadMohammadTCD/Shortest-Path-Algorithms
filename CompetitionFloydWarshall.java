@@ -33,6 +33,9 @@ public class CompetitionFloydWarshall {
     				if(edges[k][i] +edges[j][k] < edges[j][i] && j != i) {
     					edges[j][i] = edges[k][i] + edges[j][k];
     				}
+    				if(j == i) {
+    					edges[j][i] = 0;
+    				}
     			}
     		}
     	}
